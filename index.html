@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Lilie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #f7cdd0;
+      --rouge: #c41212;
+      --blanc: #fff8f6;
+      --fond-1: #fff8f6;
+      --fond-2: #fceeee;
+      --fond-3: #f9e3e5;
+      --fond-4: #f7d6d8;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: var(--blanc);
+      color: #333;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--rose);
+      padding: 10px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-weight: bold;
+      font-family: 'Playfair Display', serif;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--rouge);
+    }
+
+    section {
+      padding: 100px 20px 60px;
+      max-width: 100%;
+    }
+
+    .hero {
+      background: var(--rouge);
+      color: white;
+      text-align: center;
+      padding: 150px 20px 100px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      font-style: italic;
+    }
+
+    .damier-fond {
+      background-image: repeating-linear-gradient(
+        45deg,
+        #fff8f6,
+        #fff8f6 25px,
+        #fbe1e3 25px,
+        #fbe1e3 50px
+      );
+    }
+
+    .about-wrapper {
+      background-color: var(--fond-2);
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    #projets {
+      background-color: var(--fond-3);
+    }
+
+    #contact {
+      background-color: var(--fond-4);
+    }
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      border-radius: 50% / 40%;
+      width: 300px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .about p {
+      flex: 1;
+      font-size: 1em;
+    }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .project {
+      width: 400px;
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border: 4px solid var(--rose);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .project img:hover {
+      filter: grayscale(0%);
+    }
+
+    .project p {
+      margin-top: 10px;
+      text-align: justify;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .contact {
+      text-align: center;
+      font-size: 1.2em;
+      color: var(--rouge);
+    }
+
+    footer {
+      background-color: var(--rose);
+      color: var(--rouge);
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-family: 'Quicksand', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#projets">Mes projets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="accueil">
+    <h1>Portfolio Lilie</h1>
+    <p>"Mon énergie est mon atout pour une communication pétillante qui fera briller vos projets."</p>
+  </section>
+
+  <section id="apropos" class="damier-fond">
+    <h2 style="text-align: center; color: var(--rouge); font-family: 'Playfair Display', serif;">À propos</h2>
+    <div class="about-wrapper">
+      <div class="about">
+        <img src="lilie.jpg" alt="Photo de Lilie">
+        <p>
+          Couleurs vives, typographies soignées, textures délicates : voilà ce qui m’inspire.<br><br>
+          Je m’appelle Lilie, je suis étudiante en communication et je crée des visuels qui ont du sens, qui attirent l’œil et qui donnent le ton.<br><br>
+          Mon univers graphique ? Pétillant, solaire, avec une touche rétro chic. J’accorde une grande importance à l’équilibre d’une mise en page, à la force d’un détail, à l’harmonie des formes et des mots.<br><br>
+          À travers ce portfolio, je vous invite à découvrir ma créativité, mon énergie et mon engagement dans chaque projet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projets">
+    <h2 style="text-align: center; color: var(--rouge); font-family: 'Playfair Display', serif;">Mes projets</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="projet1.jpg" alt="Projet 1" onclick="openLightbox(this.src)">
+        <p>J'ai participé à la réalisation d’un événement pour créer du lien entre les collégiens et les lycéens. Nous avons conçu une affiche colorée et conviviale pour promouvoir l'événement.</p>
+      </div>
+      <div class="project">
+        <img src="projet2.jpg" alt="Projet 2" onclick="openLightbox(this.src)">
+        <p>Pour financer un voyage aux États-Unis qui me tenait à cœur, j’ai réalisé un flyer que j’ai distribué dans mon quartier. Je proposais des services de babysitting, d’aide aux devoirs et de garde d’animaux.</p>
+      </div>
+      <div class="project">
+        <img src="projet3.jpg" alt="Projet 3" onclick="openLightbox(this.src)">
+        <p>Dans le cadre de mon stage de seconde chez XSENS HD, j’ai conçu un post Instagram pour communiquer avec leur communauté. J’y ai mis toute mon énergie et ma créativité !</p>
+      </div>
+      <div class="project">
+        <img src="projet4.jpg" alt="Projet 4" onclick="openLightbox(this.src)">
+        <p>J’ai participé à l’organisation de cet événement : création de l’affiche, des flyers et accueil du public. Le jour J, j’ai distribué les supports et répondu aux questions des visiteurs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 style="text-align: center; color: var(--rouge); font-family: 'Playfair Display', serif;">Contact</h2>
+    <div class="contact">
+      <p>voir CV</p>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <footer>
+    <p>&#169; Portfolio de Lilie - 2025</p>
+  </footer>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
